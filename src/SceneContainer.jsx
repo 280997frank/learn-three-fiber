@@ -1,5 +1,5 @@
 import {Environment, Float, OrbitControls, PerspectiveCamera} from "@react-three/drei";
-import {Suspense, useState} from "react";
+import React, {Suspense} from "react";
 import {Color} from "three";
 import {FloatingIsland} from "./FloatingIsland";
 import {TREX} from "./TREX";
@@ -12,9 +12,7 @@ const defaultColor = {
 }
 
 export function SceneContainer() {
-  let lightColor = new Color(color.r, color.g, color.b);
-
-  console.log(color)
+  let lightColor = new Color(defaultColor.r, defaultColor.g, defaultColor.b);
 
   return (
     <Suspense fallback={null}>
