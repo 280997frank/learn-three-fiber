@@ -1,6 +1,6 @@
 import {Environment, Float, OrbitControls, PerspectiveCamera} from "@react-three/drei";
 import {Suspense, useState} from "react";
-import {Color, CylinderGeometry, Mesh, MeshBasicMaterial} from "three";
+import {Color} from "three";
 import {FloatingIsland} from "./FloatingIsland";
 import {TREX} from "./TREX";
 import {Words} from "./Words";
@@ -12,7 +12,6 @@ const defaultColor = {
 }
 
 export function SceneContainer() {
-  const [color, setColor] = useState(defaultColor);
   let lightColor = new Color(color.r, color.g, color.b);
 
   console.log(color)
