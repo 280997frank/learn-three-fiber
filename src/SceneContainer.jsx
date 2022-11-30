@@ -1,6 +1,6 @@
 import {Environment, Float, OrbitControls, PerspectiveCamera} from "@react-three/drei";
-import {Suspense, useState} from "react";
-import {Color, CylinderGeometry, Mesh, MeshBasicMaterial} from "three";
+import {Suspense} from "react";
+import {Color} from "three";
 import {FloatingIsland} from "./FloatingIsland";
 import {TREX} from "./TREX";
 import {Words} from "./Words";
@@ -12,17 +12,17 @@ const defaultColor = {
 }
 
 export function SceneContainer() {
-  const [color, setColor] = useState(defaultColor);
-  let lightColor = new Color(color.r, color.g, color.b);
+  // const [color, setColor] = useState(defaultColor);
+  let lightColor = new Color(defaultColor.r, defaultColor.g, defaultColor.b);
 
-  console.log(color)
+  // console.log(color)
 
   return (
     <Suspense fallback={null}>
       <Environment background={"only"} files={process.env.PUBLIC_URL + "/textures/bg.hdr"} />
 
       <PerspectiveCamera makeDefault fov={50} position={[-1.75, 10.85, 20.35]} />
-      <OrbitControls target={[1, 5, 0]} maxPolarAngle={Math.PI * 4}/>
+      <OrbitControls target={[1, 5, 0]} maxPolarAngle={"Infinity"} minPolarAngle={"-Infinity"}/>
 
       <Float
         speed={0.5}
